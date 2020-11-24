@@ -20,7 +20,9 @@ const app = new Vue({
       this.modDate = this.dates.split(" ");
 
       this.modDate.forEach((date) => {
-        this.dateLists.push({ day: date });
+        if (Number.isInteger(+date)) {
+          this.dateLists.push({ day: date });
+        }
       });
       // this.dateLists = [{ day: 15 }, { day: 28 }, { day: 30 }];
       this.dateLists.forEach((date) => {
