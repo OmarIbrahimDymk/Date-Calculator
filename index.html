@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="./vendor/materialize/css/materialize.min.css"
+    />
+
+    <title>Date Calculator</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="row">
+        <div class="col s12 l6">
+          <h1>{{ welcomeMsg }}</h1>
+          <input type="text" v-model="dates" />
+          <button class="btn" @click="calculate" type="submit">
+            Calculate
+          </button>
+          <ul class="collection with-header">
+            <li class="collection-header">
+              <h4>Today - {{ currentDate._d.toString().slice(4, 15) }}</h4>
+            </li>
+            <li class="collection-item" v-for="(date, index) in dateLists">
+              {{ date.day }} Days - {{ date.date._d.toString().slice(4, 15) }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="./vue.min.js"></script> -->
+    <script src="./vendor/materialize/js/materialize.min.js"></script>
+    <script src="./vendor/moment.min.js"></script>
+    <script src="./vendor/vue.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
