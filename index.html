@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col s12 l6">
           <h1>{{ welcomeMsg }}</h1>
-          <input type="text" v-model="dates" />
+          <input type="text" v-model="dates" @change="calculate" />
           <button class="btn" @click="calculate" type="submit">
             Calculate
           </button>
