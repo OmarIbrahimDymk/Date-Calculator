@@ -63,7 +63,7 @@ const app = new Vue({
         let day = moment().add(index, "days");
         months.push({
           date: day,
-          day: `${day.dates()} - ${this.monthNames[day.month()]}`,
+          day: `${day.date()} - ${this.monthNames[day.month()]}`,
           isToday: day.isSame(moment()),
           isPenalty: day.isBefore(firstDayWithoutPenalty),
           isNoPenalty: day.isSameOrAfter(firstDayWithoutPenalty),
