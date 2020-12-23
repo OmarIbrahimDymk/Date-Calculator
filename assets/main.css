@@ -73,3 +73,19 @@
 .timeline-text {
   margin-left: 1rem;
 }
+
+.legend {
+  display: flex;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 10rem;
+}
+
+.legend-item .color {
+  width: 2rem;
+  height: 1.5rem;
+}

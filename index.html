@@ -18,10 +18,31 @@
       <div class="row">
         <div class="col s12 l6">
           <h1>Penalty Checker</h1>
-          <label for=""
+          <label for="penalty"
             >Penalty Rule. e.g: 15 calendar days from date of resolution</label
           >
-          <input type="number" v-model="penaltyRule" @change="calculate" />
+          <input
+            id="penalty"
+            type="number"
+            v-model="penaltyRule"
+            @change="calculate"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="legend">
+          <div class="legend-item">
+            <span>Today</span>
+            <span class="color green"></span>
+          </div>
+          <div class="legend-item">
+            <span>Without Penalty</span>
+            <span class="color green lighten-2"></span>
+          </div>
+          <div class="legend-item">
+            <span>With Penalty</span>
+            <span class="color red"></span>
+          </div>
         </div>
       </div>
       <div class="row">
