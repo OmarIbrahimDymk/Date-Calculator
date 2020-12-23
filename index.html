@@ -8,11 +8,35 @@
       rel="stylesheet"
       href="./vendor/materialize/css/materialize.min.css"
     />
+    <link rel="stylesheet" href="/assets/main.css" />
 
     <title>Date Calculator</title>
   </head>
   <body>
     <div id="app" class="container">
+      <!-- Penalty Checker -->
+      <div class="row">
+        <div class="col s12 l6">
+          <h1>Penalty Checker</h1>
+          <label for=""
+            >Penalty Rule. e.g: 15 calendar days from date of resolution</label
+          >
+          <input type="number" v-model="penaltyRule" @change="calculate" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="cols s12 l6">
+          <div class="calendar">
+            <span
+              v-for="(day, index) in GetDays"
+              :key="index"
+              :class="`day ${day.isToday ? 'today':''} ${day.isPenalty ? 'penalty':''} ${day.isNoPenalty ? 'no-penalty':''}`"
+              >{{ day.day }}</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Date Calculator -->
       <div class="row">
         <div class="col s12 l6">
           <h1>{{ welcomeMsg }}</h1>
@@ -20,6 +44,10 @@
           <button class="btn" @click="calculate" type="submit">
             Calculate
           </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l6">
           <ul class="collection with-header">
             <li class="collection-header">
               <h4>Today - {{ currentDate._d.toString().slice(4, 15) }}</h4>
@@ -35,7 +63,8 @@
     <!-- <script src="./vue.min.js"></script> -->
     <script src="./vendor/materialize/js/materialize.min.js"></script>
     <script src="./vendor/moment.min.js"></script>
-    <script src="./vendor/vue.min.js"></script>
-    <script src="./main.js"></script>
+    <!-- <script src="./vendor/vue.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./assets/main.js"></script>
   </body>
 </html>
